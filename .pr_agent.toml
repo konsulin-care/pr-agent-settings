@@ -1,0 +1,48 @@
+[config]
+model = "gpt-5-2025-08-07"
+model_reasoning = "o4-mini"
+model_weak = "gpt-4o"
+fallback_models=["o4-mini", "gpt-4o"]
+seed = 42
+temperature = 0
+ignore_pr_target_branches = ["main"]
+ignore_pr_authors = ["dependabot"]
+
+[pr_reviewer]
+extra_instructions = "Focus on security and performance"
+require_estimate_effort_to_review = false
+publish_output_no_suggestions = false # Avoid noisy "No major issues detected" comments
+num_max_findings = 5
+
+[pr_description]
+enable_pr_diagram = false
+publish_description_as_comment = true
+
+[pr_code_suggestions]
+num_code_suggestions_per_chunk = 5
+
+[github_app]
+
+# These toggles allows running the github app from custom deployments
+bot_user = "github-actions[bot]"
+override_deployment_type = true
+
+# Settings for "pull_request" event
+handle_pr_actions = ['opened', 'ready_for_review']
+pr_commands = [
+    "/describe --pr_description.final_update_message=false",
+    "/review",
+    "/improve",
+]
+
+# Detect and handle push triggers for new commits
+handle_push_trigger = false
+push_trigger_ignore_bot_commits = true
+push_trigger_ignore_merge_commits = true
+push_trigger_wait_for_initial_review = true
+push_trigger_pending_tasks_backlog = true
+push_trigger_pending_tasks_ttl = 300
+push_commands = [
+    "/describe",
+    "/review",
+]
