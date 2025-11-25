@@ -29,6 +29,7 @@ enable_help_text = false
 num_code_suggestions_per_chunk = 5
 publish_output_no_suggestions = false
 enable_help_text = false
+enable_chat_in_code_suggestions = false
 
 # These toggles allows running the github app from custom deployments
 [github_app]
