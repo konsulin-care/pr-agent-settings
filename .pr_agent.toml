@@ -7,6 +7,7 @@ seed = 42
 temperature = 0
 ignore_pr_target_branches = ["main"]
 ignore_pr_authors = ["dependabot"]
+ignore_pr_labels = ["wip", "draft"]
 
 [pr_reviewer]
 extra_instructions = """\
@@ -30,6 +31,7 @@ num_code_suggestions_per_chunk = 5
 publish_output_no_suggestions = false
 enable_help_text = false
 enable_chat_in_code_suggestions = false
+publish_output_no_suggestions = false
 
 # These toggles allows running the github app from custom deployments
 [github_app]
