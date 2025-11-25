@@ -9,21 +9,26 @@ ignore_pr_target_branches = ["main"]
 ignore_pr_authors = ["dependabot"]
 
 [pr_reviewer]
-extra_instructions = "Focus on security and performance"
-require_estimate_effort_to_review = false
+extra_instructions = """\
+Focus on security and performance. In the code feedback section, emphasize the following:
+- Does the code logic cover relevant edge cases?
+- Is the code logic clear and easy to understand?
+- Is the code logic efficient?
+"""
 publish_output_no_suggestions = false # Avoid noisy "No major issues detected" comments
-num_max_findings = 5
+require_estimate_contribution_time_cost = true
 
 [pr_description]
 enable_pr_diagram = false
 publish_description_as_comment = true
+add_original_user_description = false
 
 [pr_code_suggestions]
 num_code_suggestions_per_chunk = 5
-
-[github_app]
+publish_output_no_suggestions = false
 
 # These toggles allows running the github app from custom deployments
+[github_app]
 bot_user = "github-actions[bot]"
 override_deployment_type = true
 
