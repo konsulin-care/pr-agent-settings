@@ -17,15 +17,18 @@ Focus on security and performance. In the code feedback section, emphasize the f
 """
 publish_output_no_suggestions = false # Avoid noisy "No major issues detected" comments
 require_estimate_contribution_time_cost = true
+enable_help_text = false
 
 [pr_description]
 enable_pr_diagram = false
 publish_description_as_comment = true
 add_original_user_description = false
+enable_help_text = false
 
 [pr_code_suggestions]
 num_code_suggestions_per_chunk = 5
 publish_output_no_suggestions = false
+enable_help_text = false
 
 # These toggles allows running the github app from custom deployments
 [github_app]
