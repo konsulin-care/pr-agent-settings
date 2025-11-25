@@ -7,7 +7,7 @@ seed = 42
 temperature = 0
 ignore_pr_target_branches = ["main"]
 ignore_pr_authors = ["dependabot"]
-ignore_pr_labels = ["wip", "draft"]
+ignore_pr_labels = ["wip", "draft", "chore"]
 
 [pr_reviewer]
 extra_instructions = """\
